@@ -44,7 +44,21 @@ namespace revisao_curso_DIO
                         }
                         break;
                     case "3":
+                        decimal notaTotal = 0;
+                        var nrAlunos = 0;
 
+                        for (int i = 0; i < alunos.Length; i++)
+                        {
+                            if (!string.IsNullOrEmpty(alunos[i].Nome))
+                            {
+                                notaTotal = notaTotal + alunos[i].Nota;
+                                nrAlunos++;
+                            }
+                        }
+
+                        var media = notaTotal/nrAlunos;
+
+                        Console.WriteLine($"Média: {media}");
                         break;
 
                     default:
